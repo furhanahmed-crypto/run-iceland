@@ -9,7 +9,7 @@
   </div>
   <div class="hero-banner-overlay">
     <div class="wrap hero-banner-content">
-      <div class="eyebrow" style="color: var(--amber)">
+      <div class="eyebrow">
         His actual trip. Not a brochure.
       </div>
       <h1 class="hb-title">Run Iceland</h1>

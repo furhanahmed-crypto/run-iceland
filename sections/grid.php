@@ -1,7 +1,7 @@
 <!-- ============ GRID SECTION — his actual IG grid, supporting proof beneath the banner ============ -->
 <section class="grid-section" id="grid">
   <div class="wrap gs-head">
-    <div class="eyebrow" style="color: var(--amber)">
+    <div class="eyebrow">
       Pulled Straight From His Grid
     </div>
     <h2>This is real. Scroll his actual feed.</h2>
