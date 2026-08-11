@@ -19,7 +19,6 @@
       </p>
       <div class="hero-actions">
         <a href="#apply" class="btn">I'm In — Claim a Spot</a>
-        <a href="#grid" class="btn btn-outline">See his grid ↓</a>
       </div>
     </div>
     <div class="hb-facts">
