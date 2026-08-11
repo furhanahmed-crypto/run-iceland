@@ -1,11 +1,10 @@
 <!-- ============ HERO BANNER — full-bleed photo, headline + facts row, leads the page ============ -->
 <header class="hero-banner">
   <div class="hero-banner-media">
-    <div class="ph-label">
-      FULL-BLEED PHOTO SLOT<br />Justin mid-run, wide landscape action
-      shot<br />1920×1080+ — this is the lead visual, pull his strongest
-      frame
-    </div>
+    <img
+      src="assets/images/justin-banner-image.jpg"
+      alt="Justin running across Icelandic terrain"
+    />
   </div>
   <div class="hero-banner-overlay">
     <div class="wrap hero-banner-content">

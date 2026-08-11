@@ -3,10 +3,10 @@
   <div class="wrap">
     <div class="about-grid">
       <div class="about-portrait">
-        <div class="ph-label">
-          SELFIE / PORTRAIT SLOT<br />same raw phone-camera style as his
-          grid — no studio shots<br />4:5 crop
-        </div>
+        <img
+          src="assets/images/IMG_1588.JPG"
+          alt="Justin with the Run Iceland crew"
+        />
         <div class="ig-chip">
           <span>@justin.truee</span>
           <span>[XX]K followers</span>
