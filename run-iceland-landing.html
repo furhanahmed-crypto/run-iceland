@@ -1,0 +1,1781 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Run Iceland w/ Justin — 8/23–28 — 2 Spots Left</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0c0c0a;
+        --navy: #12181c;
+        --navy-2: #1b242a;
+        --bg: #f6f3e9;
+        --bg-alt: #ffffff;
+        --tab: #ece7d8;
+        --tab-hover: #ded7c1;
+        --line: rgba(255, 255, 255, 0.14);
+        --line-lt: rgba(28, 30, 23, 0.15);
+        --ink: #1c1e17;
+        --ink-soft: #5f6357;
+        --rust: #b8502e;
+        --amber: #e3b23c;
+        --muted: #9c9a8c;
+        --white: #f6f4ec;
+        --success: #5c7a45;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+        line-height: 1.5;
+        -webkit-font-smoothing: antialiased;
+      }
+      h1,
+      h2,
+      h3,
+      .display,
+      .stamp {
+        font-family: "Archivo Black", sans-serif;
+        font-weight: 400;
+        text-transform: uppercase;
+        letter-spacing: -0.01em;
+        line-height: 0.95;
+      }
+      .mono {
+        font-family: "JetBrains Mono", monospace;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      img {
+        max-width: 100%;
+        display: block;
+      }
+      .wrap {
+        max-width: 1180px;
+        margin: 0 auto;
+        padding: 0 24px;
+      }
+      .section {
+        padding: 96px 0;
+      }
+      .eyebrow {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+        color: var(--rust);
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        margin-bottom: 18px;
+      }
+      .eyebrow::before {
+        content: "";
+        width: 8px;
+        height: 8px;
+        background: var(--amber);
+        border-radius: 50%;
+        display: inline-block;
+      }
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        padding: 16px 32px;
+        background: var(--rust);
+        color: #fff;
+        font-weight: 700;
+        font-size: 14px;
+        letter-spacing: 0.02em;
+        border: none;
+        border-radius: 2px;
+        cursor: pointer;
+        transition:
+          transform 0.15s ease,
+          background 0.15s ease;
+        text-transform: uppercase;
+        font-family: "Inter", sans-serif;
+      }
+      .btn:hover {
+        background: #d05f37;
+        transform: translateY(-2px);
+      }
+      .btn-outline {
+        background: transparent;
+        border: 1px solid rgba(246, 244, 236, 0.35);
+        color: var(--white);
+      }
+      .btn-outline:hover {
+        background: rgba(246, 244, 236, 0.08);
+        border-color: #fff;
+      }
+
+      /* ===== stamp — the recurring "8/23-28 RUN ICELAND" mark from his own posts ===== */
+      .stamp {
+        text-align: right;
+        line-height: 0.92;
+      }
+      .stamp .date {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+        font-size: 11px;
+        letter-spacing: 0.03em;
+        margin-bottom: 3px;
+        text-transform: none;
+      }
+      .stamp .word {
+        display: block;
+        font-size: 15px;
+      }
+
+      /* ===== NAV — stays dark, floats over both the photo hero and the light page ===== */
+      nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 100;
+        background: rgba(12, 12, 10, 0.92);
+        color: var(--white);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--line);
+      }
+      nav .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        height: 68px;
+      }
+      .nav-links {
+        display: flex;
+        gap: 26px;
+        font-size: 12.5px;
+        color: var(--muted);
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+      }
+      .nav-links a:hover {
+        color: var(--white);
+      }
+      .nav-cta {
+        font-size: 12px;
+        padding: 10px 20px;
+      }
+      @media (max-width: 760px) {
+        .nav-links {
+          display: none;
+        }
+      }
+
+      /* ===== HERO BANNER — single full-bleed photo banner, headline + facts row on the image, run-greece.gr style. Leads the page. ===== */
+      .hero-banner {
+        position: relative;
+        padding-top: 68px;
+        min-height: 86vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        overflow: hidden;
+        background: var(--black);
+      }
+      .hero-banner-media {
+        position: absolute;
+        inset: 0;
+        background:
+          linear-gradient(
+            180deg,
+            rgba(10, 11, 9, 0.25) 0%,
+            rgba(10, 11, 9, 0.55) 55%,
+            rgba(10, 11, 9, 0.97) 100%
+          ),
+          repeating-linear-gradient(
+            135deg,
+            #1c2117 0px,
+            #1c2117 2px,
+            #101410 2px,
+            #101410 42px
+          );
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .hero-banner-media .ph-label {
+        border: 1px dashed rgba(246, 244, 236, 0.35);
+        padding: 16px 22px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: rgba(246, 244, 236, 0.6);
+        text-align: center;
+        max-width: 340px;
+        background: rgba(10, 11, 9, 0.35);
+      }
+      .hero-banner-overlay {
+        position: relative;
+        z-index: 2;
+      }
+      .hero-banner-content {
+        padding: 90px 24px 44px;
+      }
+      .hb-title {
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        color: var(--white);
+        font-size: clamp(42px, 8.5vw, 104px);
+        line-height: 0.88;
+      }
+      .hb-sub {
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        color: var(--amber);
+        font-size: clamp(18px, 3.6vw, 32px);
+        margin-top: 6px;
+        letter-spacing: 0.01em;
+      }
+      .hb-desc {
+        max-width: 560px;
+        color: var(--muted);
+        font-size: 16px;
+        margin: 20px 0 28px;
+      }
+      .hb-facts {
+        background: rgba(10, 11, 9, 0.55);
+        backdrop-filter: blur(6px);
+        border-top: 1px solid var(--line);
+      }
+      .hb-facts .wrap {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        padding: 30px 24px;
+      }
+      @media (max-width: 700px) {
+        .hb-facts .wrap {
+          grid-template-columns: repeat(2, 1fr);
+          row-gap: 24px;
+        }
+      }
+
+      /* ===== GRID SECTION — his actual IG grid, supporting proof beneath the hero banner ===== */
+      .grid-section {
+        background: var(--black);
+        padding: 64px 0 70px;
+      }
+      .grid-section .gs-head h2 {
+        color: var(--white);
+        font-size: clamp(24px, 3.6vw, 36px);
+        margin-top: 6px;
+      }
+      .grid-section .gs-head {
+        margin-bottom: 28px;
+      }
+      .ig-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-auto-rows: 230px;
+        gap: 3px;
+      }
+      .ig-cell {
+        position: relative;
+        background: #20241d;
+        background-image:
+          linear-gradient(
+            160deg,
+            rgba(60, 66, 50, 0.9),
+            rgba(15, 16, 12, 0.95)
+          ),
+          repeating-linear-gradient(
+            45deg,
+            rgba(255, 255, 255, 0.03) 0px,
+            rgba(255, 255, 255, 0.03) 2px,
+            transparent 2px,
+            transparent 14px
+          );
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 14px;
+      }
+      .ig-cell.wide {
+        grid-column: span 2;
+      }
+      .ig-cell.tall {
+        grid-row: span 2;
+      }
+      .ig-cell .ph-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 10.5px;
+        color: rgba(246, 244, 236, 0.55);
+        line-height: 1.4;
+        align-self: flex-start;
+        margin-top: auto;
+        margin-bottom: auto;
+        border: 1px dashed rgba(246, 244, 236, 0.3);
+        padding: 8px 10px;
+      }
+      .ig-cell .caption-line {
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        color: #fff;
+        font-size: clamp(18px, 2.4vw, 26px);
+        line-height: 1.02;
+        text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+      }
+      .ig-cell .stamp {
+        position: absolute;
+        bottom: 12px;
+        right: 12px;
+        color: #fff;
+        text-shadow: 0 2px 6px rgba(0, 0, 0, 0.7);
+      }
+      .ig-cell.feature {
+        background-image: none;
+        background: linear-gradient(150deg, #2a2f22, #0c0c0a 75%);
+      }
+      @media (max-width: 820px) {
+        .ig-grid {
+          grid-template-columns: repeat(2, 1fr);
+          grid-auto-rows: 190px;
+        }
+        .ig-cell.wide {
+          grid-column: span 2;
+        }
+        .ig-cell.tall {
+          grid-row: span 1;
+        }
+      }
+
+      .fact {
+        text-align: center;
+        padding: 0 18px;
+        border-right: 1px solid var(--line);
+      }
+      .fact:last-child {
+        border-right: none;
+      }
+      .fact .fi {
+        font-size: 20px;
+        color: var(--amber);
+        margin-bottom: 12px;
+      }
+      .fact .fl {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 12px;
+      }
+      .fact .fr {
+        width: 34px;
+        height: 1px;
+        background: var(--line);
+        margin: 0 auto 12px;
+      }
+      .fact .fv {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 16px;
+        color: var(--white);
+        text-transform: uppercase;
+        line-height: 1.3;
+      }
+      @media (max-width: 700px) {
+        .fact {
+          border-right: none;
+          border-bottom: 1px solid var(--line);
+          padding-bottom: 24px;
+        }
+      }
+
+      /* ===== COUNTDOWN — light band, sits in the paper page between the two dark accent strips ===== */
+      .countdown-band {
+        background: var(--bg-alt);
+        border-bottom: 1px solid var(--line-lt);
+      }
+      .countdown-band .wrap {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 18px;
+        padding: 26px 24px;
+      }
+      .countdown-label {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 14px;
+        text-transform: uppercase;
+        color: var(--ink);
+      }
+      .countdown-label small {
+        display: block;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        font-weight: 500;
+        color: var(--ink-soft);
+        text-transform: none;
+        margin-top: 4px;
+      }
+      .clock {
+        display: flex;
+        gap: 8px;
+      }
+      .clock-cell {
+        background: var(--bg);
+        border: 1px solid var(--line-lt);
+        padding: 8px 12px;
+        min-width: 58px;
+        text-align: center;
+      }
+      .clock-cell .n {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--rust);
+      }
+      .clock-cell .l {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+      }
+
+      /* ===== BRACKET BANNER — double-rule announcement block, dark accent punctuation mid-page ===== */
+      .bracket-banner {
+        background: var(--navy);
+        border-top: 1px solid var(--line);
+        border-bottom: 1px solid var(--line);
+        padding: 52px 24px;
+        text-align: center;
+      }
+      .bracket-banner .rule {
+        width: 200px;
+        height: 1px;
+        background: rgba(246, 244, 236, 0.28);
+        margin: 0 auto;
+      }
+      .bracket-banner h3 {
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        font-size: clamp(19px, 3.2vw, 30px);
+        color: var(--white);
+        margin: 20px auto;
+        max-width: 760px;
+        line-height: 1.2;
+      }
+      .bracket-banner .rule.bottom {
+        margin-top: 0;
+      }
+      .bracket-banner small {
+        display: block;
+        margin-top: 16px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--amber);
+        letter-spacing: 0.06em;
+      }
+
+      /* ===== BANNER HEAD — skewed section title, run-greece.gr style. Dark chip on the light page. ===== */
+      .banner-head-wrap {
+        margin-bottom: 36px;
+      }
+      .banner-head {
+        background: linear-gradient(100deg, var(--navy-2), var(--navy));
+        border-left: 5px solid var(--amber);
+        transform: skewX(-9deg);
+        display: inline-block;
+        padding: 14px 44px 14px 26px;
+      }
+      .banner-head span {
+        display: block;
+        transform: skewX(9deg);
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        font-size: clamp(16px, 2.2vw, 20px);
+        color: var(--white);
+        letter-spacing: 0.01em;
+      }
+
+      /* ===== INFO HUB — sidebar-tab layout, run-greece.gr registration-info style ===== */
+      .info-hub {
+        display: grid;
+        grid-template-columns: 210px 1fr;
+        gap: 48px;
+        align-items: start;
+      }
+      @media (max-width: 820px) {
+        .info-hub {
+          grid-template-columns: 1fr;
+        }
+      }
+      .info-nav {
+        position: sticky;
+        top: 88px;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+      }
+      @media (max-width: 820px) {
+        .info-nav {
+          position: static;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+      }
+      .info-nav a {
+        padding: 13px 16px;
+        background: var(--tab);
+        border-left: 3px solid transparent;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11.5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        transition: all 0.15s ease;
+      }
+      .info-nav a:hover {
+        color: var(--ink);
+        border-left-color: var(--rust);
+        background: var(--tab-hover);
+      }
+      .info-block {
+        margin-bottom: 52px;
+        scroll-margin-top: 96px;
+      }
+      .info-block:last-child {
+        margin-bottom: 0;
+      }
+      .info-block p {
+        color: var(--ink-soft);
+        font-size: 14.5px;
+        margin-bottom: 10px;
+      }
+      .info-block ul {
+        list-style: none;
+        margin-top: 12px;
+      }
+      .info-block ul li {
+        padding: 10px 0 10px 20px;
+        border-top: 1px solid var(--line-lt);
+        font-size: 14px;
+        color: var(--ink);
+        position: relative;
+      }
+      .info-block ul li:last-child {
+        border-bottom: 1px solid var(--line-lt);
+      }
+      .info-block ul li::before {
+        content: "—";
+        position: absolute;
+        left: 0;
+        color: var(--rust);
+      }
+
+      /* ===== SECTION HEADERS ===== */
+      .section-head {
+        max-width: 620px;
+        margin-bottom: 52px;
+      }
+      .section-head h2 {
+        font-size: clamp(28px, 4.6vw, 46px);
+        margin-top: 6px;
+        color: var(--ink);
+      }
+      .section-head p {
+        color: var(--ink-soft);
+        font-size: 15.5px;
+        margin-top: 16px;
+      }
+
+      /* ===== ABOUT JUSTIN ===== */
+      .about {
+        background: var(--bg-alt);
+      }
+      .about-grid {
+        display: grid;
+        grid-template-columns: 0.85fr 1.15fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 860px) {
+        .about-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .about-portrait {
+        aspect-ratio: 4/5;
+        border: 1px dashed var(--line-lt);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: var(--tab);
+        position: relative;
+      }
+      .about-portrait .ph-label {
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--ink-soft);
+        text-align: center;
+        padding: 0 30px;
+      }
+      .about-portrait .ig-chip {
+        position: absolute;
+        bottom: 14px;
+        left: 14px;
+        right: 14px;
+        background: rgba(12, 12, 10, 0.82);
+        border: 1px solid var(--line);
+        padding: 10px 14px;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12px;
+        color: var(--white);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      .about-body h3 {
+        font-size: clamp(24px, 3.6vw, 36px);
+        margin-bottom: 18px;
+        color: var(--ink);
+      }
+      .about-body p {
+        color: var(--ink-soft);
+        font-size: 15.5px;
+        margin-bottom: 16px;
+      }
+      .about-body .tag-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 22px;
+      }
+      .tag-pill {
+        background: var(--tab);
+        border: 1px solid var(--line-lt);
+        padding: 8px 14px;
+        border-radius: 999px;
+        font-size: 12px;
+        font-family: "JetBrains Mono", monospace;
+        color: var(--ink-soft);
+      }
+
+      /* ===== TRIP DETAILS ===== */
+      .details {
+        background: var(--bg);
+      }
+      .details-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 860px) {
+        .details-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .detail-card {
+        background: var(--bg-alt);
+        border: 1px solid var(--line-lt);
+        padding: 30px 24px;
+      }
+      .detail-card .icon {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        background: rgba(28, 30, 23, 0.05);
+        border: 1px solid var(--line-lt);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: "Archivo Black", sans-serif;
+        color: var(--ink-soft);
+        font-size: 15px;
+        margin-bottom: 18px;
+      }
+      .detail-card h4 {
+        font-family: "Archivo Black", sans-serif;
+        text-transform: uppercase;
+        font-size: 15px;
+        margin-bottom: 10px;
+        color: var(--ink);
+      }
+      .detail-card p {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      .itinerary {
+        margin-top: 52px;
+      }
+      .itin-row {
+        display: grid;
+        grid-template-columns: 120px 1fr;
+        gap: 24px;
+        padding: 20px 0;
+        border-top: 1px solid var(--line-lt);
+      }
+      .itin-row:last-child {
+        border-bottom: 1px solid var(--line-lt);
+      }
+      .itin-day {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--rust);
+        font-size: 12.5px;
+        font-weight: 700;
+      }
+      .itin-body h5 {
+        font-size: 15px;
+        font-weight: 700;
+        margin-bottom: 5px;
+        color: var(--ink);
+      }
+      .itin-body p {
+        color: var(--ink-soft);
+        font-size: 13.5px;
+      }
+
+      /* ===== WHY / URGENCY ===== */
+      .urgency {
+        background: var(--bg-alt);
+      }
+      .urgency-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+      }
+      @media (max-width: 860px) {
+        .urgency-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .spots-box {
+        background: var(--bg);
+        border: 1px solid var(--line-lt);
+        padding: 38px;
+      }
+      .spots-box .big {
+        font-family: "Archivo Black", sans-serif;
+        font-size: 70px;
+        color: var(--rust);
+        line-height: 1;
+      }
+      .spots-box .of {
+        font-family: "JetBrains Mono", monospace;
+        color: var(--ink-soft);
+        font-size: 12.5px;
+        margin-top: 8px;
+      }
+      .bar-track {
+        height: 6px;
+        background: var(--line-lt);
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      .bar-fill {
+        height: 100%;
+        width: 90%;
+        background: var(--rust);
+      }
+      .why-list {
+        list-style: none;
+        margin-top: 18px;
+      }
+      .why-list li {
+        display: flex;
+        gap: 14px;
+        padding: 14px 0;
+        border-bottom: 1px solid var(--line-lt);
+        font-size: 14.5px;
+        color: var(--ink);
+      }
+      .why-list li span.check {
+        color: var(--success);
+        font-family: "JetBrains Mono", monospace;
+        font-weight: 700;
+      }
+      .why-list li .sub {
+        display: block;
+        color: var(--ink-soft);
+        font-size: 13px;
+        margin-top: 2px;
+      }
+
+      /* ===== SOCIAL PROOF — looks like screenshotted DMs/comments ===== */
+      .proof {
+        background: var(--bg);
+      }
+      .proof-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+      }
+      @media (max-width: 860px) {
+        .proof-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .quote-card {
+        background: var(--bg-alt);
+        border: 1px solid var(--line-lt);
+        padding: 24px;
+      }
+      .quote-card .tophead {
+        display: flex;
+        justify-content: space-between;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 11px;
+        color: var(--ink-soft);
+        margin-bottom: 14px;
+      }
+      .quote-card p {
+        font-size: 14.5px;
+        color: var(--ink);
+        font-family: "Inter", sans-serif;
+      }
+
+      /* ===== FORM ===== */
+      .signup {
+        background: var(--bg);
+        position: relative;
+      }
+      .signup-grid {
+        display: grid;
+        grid-template-columns: 0.9fr 1.1fr;
+        gap: 56px;
+      }
+      @media (max-width: 900px) {
+        .signup-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .signup-copy h2 {
+        font-size: clamp(28px, 4.6vw, 44px);
+        color: var(--ink);
+      }
+      .signup-copy p {
+        color: var(--ink-soft);
+        margin-top: 16px;
+        font-size: 15.5px;
+      }
+      .signup-copy .mini-stat {
+        margin-top: 28px;
+        display: flex;
+        gap: 14px;
+        align-items: center;
+        font-family: "JetBrains Mono", monospace;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+        flex-wrap: wrap;
+      }
+      form {
+        background: var(--bg-alt);
+        border: 1px solid var(--line-lt);
+        padding: 34px;
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        box-shadow: 0 4px 28px rgba(28, 30, 23, 0.06);
+      }
+      .field label {
+        display: block;
+        font-size: 11.5px;
+        letter-spacing: 0.05em;
+        text-transform: uppercase;
+        color: var(--ink-soft);
+        margin-bottom: 8px;
+        font-weight: 700;
+      }
+      .field input,
+      .field textarea,
+      .field select {
+        width: 100%;
+        background: var(--bg);
+        border: 1px solid var(--line-lt);
+        color: var(--ink);
+        padding: 12px 14px;
+        font-family: "Inter", sans-serif;
+        font-size: 14px;
+        border-radius: 2px;
+      }
+      .field input:focus,
+      .field textarea:focus,
+      .field select:focus {
+        outline: none;
+        border-color: var(--rust);
+      }
+      .field-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 16px;
+      }
+      @media (max-width: 520px) {
+        .field-row {
+          grid-template-columns: 1fr;
+        }
+      }
+      form .btn {
+        width: 100%;
+        margin-top: 4px;
+        padding: 16px;
+      }
+      .form-note {
+        font-size: 11.5px;
+        color: var(--ink-soft);
+        text-align: center;
+      }
+      #form-success {
+        display: none;
+        text-align: center;
+        padding: 36px 20px;
+      }
+      #form-success h3 {
+        color: var(--success);
+        margin-bottom: 10px;
+      }
+      #form-success p {
+        color: var(--ink-soft);
+        font-size: 14px;
+      }
+
+      /* ===== FOOTER ===== */
+      footer {
+        border-top: 1px solid var(--line-lt);
+        padding: 44px 0;
+        background: var(--bg-alt);
+      }
+      footer .wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 18px;
+      }
+      footer .foot-left {
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+      footer .foot-links {
+        display: flex;
+        gap: 20px;
+        font-size: 12.5px;
+        color: var(--ink-soft);
+      }
+      footer .foot-links a:hover {
+        color: var(--ink);
+      }
+
+      .sticky-cta {
+        position: fixed;
+        bottom: 16px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 90;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        background: rgba(23, 23, 15, 0.95);
+        border: 1px solid var(--line);
+        padding: 9px 10px 9px 16px;
+        border-radius: 999px;
+        backdrop-filter: blur(8px);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      }
+      .sticky-cta span {
+        font-size: 11.5px;
+        color: var(--muted);
+        font-family: "JetBrains Mono", monospace;
+      }
+      .sticky-cta .btn {
+        padding: 10px 18px;
+        font-size: 12px;
+      }
+      @media (max-width: 600px) {
+        .sticky-cta span {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="wrap">
+        <div class="stamp">
+          <span class="date">8/23–28</span
+          ><span class="word">Run<br />Iceland</span>
+        </div>
+        <div class="nav-links">
+          <a href="#grid">His Grid</a>
+          <a href="#about">The Guy</a>
+          <a href="#trip">The Trip</a>
+          <a href="#proof">Who's In</a>
+        </div>
+        <a href="#apply" class="btn nav-cta">Claim a Spot</a>
+      </div>
+    </nav>
+
+    <!-- ============ HERO BANNER — full-bleed photo, headline + facts row, leads the page ============ -->
+    <header class="hero-banner">
+      <div class="hero-banner-media">
+        <div class="ph-label">
+          FULL-BLEED PHOTO SLOT<br />Justin mid-run, wide landscape action
+          shot<br />1920×1080+ — this is the lead visual, pull his strongest
+          frame
+        </div>
+      </div>
+      <div class="hero-banner-overlay">
+        <div class="wrap hero-banner-content">
+          <div class="eyebrow" style="color: var(--amber)">
+            His actual trip. Not a brochure.
+          </div>
+          <h1 class="hb-title">Run Iceland</h1>
+          <div class="hb-sub">With Justin — 2 Spots Left</div>
+          <p class="hb-desc">
+            He's already booked it — Aug 23 to 28, southern Iceland. Two seats
+            are still open for whoever can say yes this week and just show up.
+          </p>
+          <div class="hero-actions">
+            <a href="#apply" class="btn">I'm In — Claim a Spot</a>
+            <a href="#grid" class="btn btn-outline">See his grid ↓</a>
+          </div>
+        </div>
+        <div class="hb-facts">
+          <div class="wrap">
+            <div class="fact">
+              <div class="fi">📅</div>
+              <div class="fl">Departs</div>
+              <div class="fr"></div>
+              <div class="fv">Aug 22, 2026</div>
+            </div>
+            <div class="fact">
+              <div class="fi">📍</div>
+              <div class="fl">Meet Point</div>
+              <div class="fr"></div>
+              <div class="fv">Reykjavík</div>
+            </div>
+            <div class="fact">
+              <div class="fi">🏔</div>
+              <div class="fl">Distance</div>
+              <div class="fr"></div>
+              <div class="fv">125 mi · 6 days</div>
+            </div>
+            <div class="fact">
+              <div class="fi">🏁</div>
+              <div class="fl">Seats Left</div>
+              <div class="fr"></div>
+              <div class="fv">2 of 20</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- ============ GRID SECTION — his actual IG grid, supporting proof beneath the banner ============ -->
+    <section class="grid-section" id="grid">
+      <div class="wrap gs-head">
+        <div class="eyebrow" style="color: var(--amber)">
+          Pulled Straight From His Grid
+        </div>
+        <h2>This is real. Scroll his actual feed.</h2>
+      </div>
+      <div class="ig-grid">
+        <div class="ig-cell">
+          <div class="ph-label">
+            PHOTO SLOT<br />handheld, mid-hike, not posed
+          </div>
+        </div>
+        <div class="ig-cell wide">
+          <div class="ph-label">
+            PHOTO SLOT<br />group on the road, packs on
+          </div>
+          <div class="stamp">
+            <span class="date">8/23–28</span
+            ><span class="word">Run<br />Iceland</span>
+          </div>
+        </div>
+        <div class="ig-cell">
+          <div class="ph-label">PHOTO SLOT<br />trail, backpack, candid</div>
+        </div>
+
+        <div class="ig-cell tall">
+          <div class="caption-line" id="days-left-cell">-- DAYS<br />LEFT.</div>
+          <div class="stamp">
+            <span class="date">8/23–28</span
+            ><span class="word">Run<br />Iceland</span>
+          </div>
+        </div>
+        <div class="ig-cell">
+          <div class="ph-label">
+            SELFIE SLOT<br />Justin, close crop, grinning
+          </div>
+        </div>
+        <div class="ig-cell feature">
+          <div class="caption-line">2 spots.<br />Not 20.</div>
+          <div class="stamp">
+            <span class="date">8/23–28</span
+            ><span class="word">Run<br />Iceland</span>
+          </div>
+        </div>
+        <div class="ig-cell">
+          <div class="caption-line">This is a<br />terrible idea.</div>
+          <div class="stamp">
+            <span class="date">8/23–28</span
+            ><span class="word">Run<br />Iceland</span>
+          </div>
+        </div>
+
+        <div class="ig-cell">
+          <div class="ph-label">
+            PHOTO SLOT<br />coastline / waterfall wide shot
+          </div>
+        </div>
+        <div class="ig-cell wide">
+          <div class="caption-line">
+            You've taken enough<br />normal vacations.
+          </div>
+          <div class="stamp">
+            <span class="date">8/23–28</span
+            ><span class="word">Run<br />Iceland</span>
+          </div>
+        </div>
+        <div class="ig-cell">
+          <div class="ph-label">VIDEO SLOT<br />fog / rain running clip</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ COUNTDOWN ============ -->
+    <div class="countdown-band">
+      <div class="wrap">
+        <div class="countdown-label">
+          Wheels up Aug 23
+          <small
+            >He's not waiting on you to decide — apps close the second seat #2
+            fills</small
+          >
+        </div>
+        <div class="clock" id="countdown">
+          <div class="clock-cell">
+            <div class="n" id="cd-days">--</div>
+            <div class="l">Days</div>
+          </div>
+          <div class="clock-cell">
+            <div class="n" id="cd-hours">--</div>
+            <div class="l">Hrs</div>
+          </div>
+          <div class="clock-cell">
+            <div class="n" id="cd-mins">--</div>
+            <div class="l">Min</div>
+          </div>
+          <div class="clock-cell">
+            <div class="n" id="cd-secs">--</div>
+            <div class="l">Sec</div>
+          </div>
+        </div>
+        <a href="#apply" class="btn">Apply Now</a>
+      </div>
+    </div>
+
+    <div class="bracket-banner">
+      <div class="rule"></div>
+      <h3>2 spots left. he's not holding them for long.</h3>
+      <div class="rule bottom"></div>
+      <small>Applications close the second seat #2 is claimed</small>
+    </div>
+
+    <!-- ============ ABOUT JUSTIN ============ -->
+    <section class="section about" id="about">
+      <div class="wrap">
+        <div class="about-grid">
+          <div class="about-portrait">
+            <div class="ph-label">
+              SELFIE / PORTRAIT SLOT<br />same raw phone-camera style as his
+              grid — no studio shots<br />4:5 crop
+            </div>
+            <div class="ig-chip">
+              <span>@justin.truee</span>
+              <span>[XX]K followers</span>
+            </div>
+          </div>
+          <div class="about-body">
+            <div class="eyebrow">The Guy, Not A Brand</div>
+            <h3>
+              He posts the fog, the bad weather,<br />and the second-guessing
+              too.
+            </h3>
+            <p>
+              Justin's grid isn't a highlight reel — it's rain-soaked selfies,
+              "this is a terrible idea" captions, and countdowns to trips he's
+              genuinely nervous about. Iceland is the same: he booked it, he's
+              running it, and he's not pretending it'll be easy.
+            </p>
+            <p>
+              [Add 2–3 sentences in his actual voice — pull straight from his
+              captions/bio so this doesn't read like agency copy. Mention past
+              routes, why Iceland, anything that explains the "terrible idea"
+              energy.]
+            </p>
+            <div class="tag-list">
+              <span class="tag-pill"
+                >Trail running, not staged travel content</span
+              >
+              <span class="tag-pill">Films it himself</span>
+              <span class="tag-pill">[X] countries run</span>
+              <span class="tag-pill">2 seats, no more</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ TRIP DETAILS — sidebar info hub, run-greece.gr registration-info style ============ -->
+    <section class="section details" id="trip">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">The Trip</div>
+          <h2>125 miles. 6 days. Iceland's south coast.</h2>
+          <p>
+            Not a race — no chip timing, no podium, no cutoff clock. It's a
+            supported stage crossing with about 20 runners covering volcanic
+            desert, black beaches, canyons and waterfalls together — some
+            running every mile, some hiking the hard sections. Trip is run
+            through
+            <a
+              href="https://www.aliverun.com/itinerary"
+              target="_blank"
+              rel="noopener"
+              style="color: var(--rust); text-decoration: underline"
+              >Alive</a
+            >; Justin's just one of the crew on it.
+          </p>
+        </div>
+
+        <div class="info-hub">
+          <div class="info-nav">
+            <a href="#it-itinerary">Day-By-Day Itinerary</a>
+            <a href="#it-included">What's Covered</a>
+            <a href="#it-notincluded">Not Covered</a>
+            <a href="#it-logistics">Location &amp; Logistics</a>
+          </div>
+
+          <div>
+            <div class="info-block" id="it-itinerary">
+              <div class="banner-head-wrap">
+                <div class="banner-head"><span>Day-By-Day Itinerary</span></div>
+              </div>
+              <div class="itinerary" style="margin-top: 0">
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 0<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 22</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Arrival · Reykjavík → Vík</h5>
+                    <p>
+                      Group meet-up, drive to Vík, settle into camp, welcome
+                      dinner, gear check.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 1<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 23</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Run to the lava fields — 28.8 mi</h5>
+                    <p>
+                      First stage day, 3 aid stops, finish at camp, group
+                      dinner.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 2<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 24</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Arctic desert &amp; remote trail — 23.5 mi</h5>
+                    <p>
+                      Open tundra and river valleys, 3 aid stops, camp finish.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 3<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 25</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Recovery day — 23.9 mi</h5>
+                    <p>
+                      Lighter trail into Landmannalaugar, optional hikes,
+                      geothermal hot spring soak.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 4<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 26</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Laugavegur — 32.9 mi</h5>
+                    <p>
+                      The big one: glaciers, rainbow mountains, river crossings,
+                      finish in Þórsmörk.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 5<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 27</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Finish at Skógafoss — 15.6 mi</h5>
+                    <p>
+                      Waterfall-lined climb to the finish line, celebration,
+                      B&amp;B in Hella.
+                    </p>
+                  </div>
+                </div>
+                <div class="itin-row">
+                  <div class="itin-day">
+                    DAY 6<br /><span
+                      style="color: var(--ink-soft); font-weight: 400"
+                      >AUG 28</span
+                    >
+                  </div>
+                  <div class="itin-body">
+                    <h5>Spa day &amp; farewell</h5>
+                    <p>
+                      Drive back toward Reykjavík, Sky Lagoon, farewell dinner,
+                      fly home.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="info-block" id="it-included">
+              <div class="banner-head-wrap">
+                <div class="banner-head"><span>What's Covered</span></div>
+              </div>
+              <p>You run, they handle the rest.</p>
+              <ul>
+                <li>Lodging Aug 22–28 (campsites or mountain huts)</li>
+                <li>All meals, trail snacks, and hot drinks</li>
+                <li>
+                  Support vehicles, daily aid stations, and bag transport — run
+                  with a day pack only
+                </li>
+                <li>GPS tracking and medical support on every stage</li>
+                <li>Reykjavík ↔ Vík group transfers</li>
+                <li>Sky Lagoon spa entry on the final day</li>
+              </ul>
+            </div>
+
+            <div class="info-block" id="it-notincluded">
+              <div class="banner-head-wrap">
+                <div class="banner-head"><span>Not Covered</span></div>
+              </div>
+              <ul>
+                <li>Flights to and from Iceland</li>
+                <li>Personal gear — tent, sleeping bag, running kit</li>
+                <li>Personal travel insurance</li>
+                <li>Accommodation on the night of Aug 28</li>
+              </ul>
+              <p style="margin-top: 14px">
+                [Insert per-person price + deposit terms once confirmed with
+                Alive.]
+              </p>
+            </div>
+
+            <div class="info-block" id="it-logistics">
+              <div class="banner-head-wrap">
+                <div class="banner-head">
+                  <span>Location &amp; Logistics</span>
+                </div>
+              </div>
+              <p>
+                Arrive Reykjavík Aug 22, running Aug 23–27, spa day + fly home
+                Aug 28. Route runs south coast — Vík, Landmannalaugar, the
+                Laugavegur trail, finishing at Skógafoss.
+              </p>
+              <p>
+                Full kit list, prep guidance, and exact meet-up details go out
+                once your seat is confirmed.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ URGENCY / WHY ============ -->
+    <section class="section urgency">
+      <div class="wrap">
+        <div class="urgency-grid">
+          <div>
+            <div class="eyebrow">Why This Week, Specifically</div>
+            <h2
+              style="
+                font-size: clamp(26px, 4vw, 40px);
+                margin-bottom: 18px;
+                color: var(--ink);
+              "
+            >
+              Two normal excuses. He's heard them.
+            </h2>
+            <ul class="why-list">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  "I need more time to think about it"<span class="sub"
+                    >The flight's in 12 days. Thinking time is basically
+                    over.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  "I'm not in good enough shape"<span class="sub"
+                    >Neither is half the group — it's stages, not a
+                    qualifier.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  Logistics are already handled<span class="sub"
+                    >Lodging, transport, and routes are booked. You just need to
+                    show up.</span
+                  >
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  Deposit locks it in today<span class="sub"
+                    >Balance isn't due until closer to departure.</span
+                  >
+                </div>
+              </li>
+            </ul>
+          </div>
+          <div class="spots-box">
+            <div
+              class="mono"
+              style="
+                color: var(--ink-soft);
+                font-size: 12.5px;
+                text-transform: uppercase;
+                letter-spacing: 0.08em;
+              "
+            >
+              Crew filled
+            </div>
+            <div class="big">
+              18<span style="color: var(--ink-soft); font-size: 32px">/20</span>
+            </div>
+            <div class="of">
+              Whole trip caps at 20 runners · 2 open · closes the second they're
+              claimed
+            </div>
+            <div class="bar-track"><div class="bar-fill"></div></div>
+            <a href="#apply" class="btn" style="width: 100%; margin-top: 24px"
+              >Apply For a Seat</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SOCIAL PROOF ============ -->
+    <section class="section proof" id="proof">
+      <div class="wrap">
+        <div class="section-head">
+          <div class="eyebrow">Who's In</div>
+          <h2>Screenshots, not testimonials</h2>
+          <p>
+            Swap these for real comments/DMs off his Iceland announcement post —
+            they'll do more work than any polished quote.
+          </p>
+        </div>
+        <div class="proof-grid">
+          <div class="quote-card">
+            <div class="tophead"><span>DM</span><span>[Name]</span></div>
+            <p>
+              "[Placeholder — pull a real DM screenshot from someone asking to
+              join or hyping the trip.]"
+            </p>
+          </div>
+          <div class="quote-card">
+            <div class="tophead"><span>COMMENT</span><span>[Name]</span></div>
+            <p>
+              "[Placeholder — a comment off the announcement post, kept exactly
+              as written, typos and all.]"
+            </p>
+          </div>
+          <div class="quote-card">
+            <div class="tophead"><span>PAST TRIP</span><span>[Name]</span></div>
+            <p>
+              "[Placeholder — someone who ran with him before, on what it
+              actually felt like.]"
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SIGNUP FORM ============ -->
+    <section class="section signup" id="apply">
+      <div class="wrap">
+        <div class="signup-grid">
+          <div class="signup-copy">
+            <div class="eyebrow">Last Step</div>
+            <h2>Tell him you're in.</h2>
+            <p>
+              Fill this out and he follows up directly — DM or email — within a
+              few hours to confirm the seat and send deposit details. First two
+              confirmed replies get the spots. That's it.
+            </p>
+            <div class="mini-stat">
+              <span>⏱ Leaves Aug 23</span>
+              <span>·</span>
+              <span>2 seats left</span>
+            </div>
+          </div>
+
+          <div>
+            <form id="apply-form">
+              <div class="field-row">
+                <div class="field">
+                  <label for="name">Full name</label>
+                  <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    placeholder="Jane Doe"
+                  />
+                </div>
+                <div class="field">
+                  <label for="ig">Instagram handle</label>
+                  <input
+                    type="text"
+                    id="ig"
+                    name="instagram"
+                    placeholder="@yourhandle"
+                  />
+                </div>
+              </div>
+              <div class="field-row">
+                <div class="field">
+                  <label for="email">Email</label>
+                  <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    placeholder="you@email.com"
+                  />
+                </div>
+                <div class="field">
+                  <label for="phone">Phone (for fast replies)</label>
+                  <input
+                    type="tel"
+                    id="phone"
+                    name="phone"
+                    placeholder="+1 555 000 0000"
+                  />
+                </div>
+              </div>
+              <div class="field">
+                <label for="experience">Running background</label>
+                <select id="experience" name="experience">
+                  <option>Casual runner</option>
+                  <option>Regular trail/road runner</option>
+                  <option>Race/ultra experience</option>
+                </select>
+              </div>
+              <div class="field">
+                <label for="message">Why you want in (optional)</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="3"
+                  placeholder="A line or two is plenty"
+                ></textarea>
+              </div>
+              <button type="submit" class="btn">
+                Submit &amp; Claim My Spot
+              </button>
+              <p class="form-note">
+                Deposit link sent after he confirms your seat. No payment
+                collected here.
+              </p>
+            </form>
+
+            <div id="form-success">
+              <h3>You're on the list.</h3>
+              <p>
+                He'll follow up by email/DM within a few hours. If it's urgent,
+                message @justin.truee directly on Instagram.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer>
+      <div class="wrap">
+        <div class="foot-left">
+          Run Iceland × @justin.truee — Aug 22–28, 2026 · Trip run by
+          <a
+            href="https://www.aliverun.com/itinerary"
+            target="_blank"
+            rel="noopener"
+            style="color: var(--ink-soft); text-decoration: underline"
+            >Alive</a
+          >
+        </div>
+        <div class="foot-links">
+          <a
+            href="https://instagram.com/justin.truee"
+            target="_blank"
+            rel="noopener"
+            >Instagram</a
+          >
+          <a href="#apply">Apply</a>
+          <a href="mailto:sai@digicarotene.com">Contact</a>
+        </div>
+      </div>
+    </footer>
+
+    <div class="sticky-cta" id="sticky-cta">
+      <span id="sticky-count">-- days left</span>
+      <a href="#apply" class="btn">Claim Spot</a>
+    </div>
+
+    <script>
+      // ---- Countdown to Aug 23, 2026, 00:00 local ----
+      var target = new Date("2026-08-23T00:00:00");
+      function updateCountdown() {
+        var now = new Date();
+        var diff = target - now;
+        if (diff < 0) diff = 0;
+        var d = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var h = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        var m = Math.floor((diff / (1000 * 60)) % 60);
+        var s = Math.floor((diff / 1000) % 60);
+        document.getElementById("cd-days").textContent = String(d).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-hours").textContent = String(h).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-mins").textContent = String(m).padStart(
+          2,
+          "0",
+        );
+        document.getElementById("cd-secs").textContent = String(s).padStart(
+          2,
+          "0",
+        );
+        var stickyEl = document.getElementById("sticky-count");
+        if (stickyEl)
+          stickyEl.textContent =
+            d + " day" + (d === 1 ? "" : "s") + " left · 2 seats";
+        var statDays = document.getElementById("stat-days");
+        if (statDays) statDays.textContent = d;
+        var gridDays = document.getElementById("days-left-cell");
+        if (gridDays) gridDays.innerHTML = d + " DAYS<br>LEFT.";
+      }
+      updateCountdown();
+      setInterval(updateCountdown, 1000);
+
+      // ---- Form submit: opens a pre-filled email to Sai (no backend required) ----
+      // To switch to a hosted form service instead, replace this handler's body
+      // with a fetch() POST to your Formspree/Google Form endpoint.
+      document
+        .getElementById("apply-form")
+        .addEventListener("submit", function (e) {
+          e.preventDefault();
+          var f = e.target;
+          var data = {
+            name: f.name.value,
+            instagram: f.instagram.value,
+            email: f.email.value,
+            phone: f.phone.value,
+            experience: f.experience.value,
+            message: f.message.value,
+          };
+          var subject = encodeURIComponent(
+            "Run Iceland application — " + data.name,
+          );
+          var body = encodeURIComponent(
+            "Name: " +
+              data.name +
+              "\n" +
+              "Instagram: " +
+              data.instagram +
+              "\n" +
+              "Email: " +
+              data.email +
+              "\n" +
+              "Phone: " +
+              data.phone +
+              "\n" +
+              "Running background: " +
+              data.experience +
+              "\n" +
+              "Message: " +
+              data.message,
+          );
+          window.location.href =
+            "mailto:sai@digicarotene.com?subject=" + subject + "&body=" + body;
+
+          f.style.display = "none";
+          document.getElementById("form-success").style.display = "block";
+        });
+    </script>
+  </body>
+</html>
