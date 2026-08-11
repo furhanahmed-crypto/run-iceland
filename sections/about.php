@@ -20,14 +20,14 @@
         </h3>
         <p>
           Justin's grid isn't a highlight reel — it's rain-soaked selfies,
-          "this is a terrible idea" captions, and countdowns to trips he's
+          "this is an incredible idea" captions, and countdowns to trips he's
           genuinely nervous about. Iceland is the same: he booked it, he's
           running it, and he's not pretending it'll be easy.
         </p>
         <p>
           [Add 2–3 sentences in his actual voice — pull straight from his
           captions/bio so this doesn't read like agency copy. Mention past
-          routes, why Iceland, anything that explains the "terrible idea"
+          routes, why Iceland, anything that explains the "incredible idea"
           energy.]
         </p>
         <div class="tag-list">

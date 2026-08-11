@@ -63,7 +63,7 @@
         src="assets/images/DSC05993.jpg"
         alt="Group photo on a rugged Icelandic ridge"
       />
-      <div class="caption-line">This is a<br />terrible idea.</div>
+      <div class="caption-line">This is an<br />incredible idea.</div>
       <div class="stamp">
         <span class="date">8/23–28</span
         ><span class="word">Run<br />Iceland</span>
